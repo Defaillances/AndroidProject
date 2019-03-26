@@ -28,10 +28,10 @@ https://github.com/Defaillances/AndroidProject.git
 
 Affiche les différentes causes des crimes dans l'ordre décroissant de réccurence. Avec une image devant chaque crime.
 
-<img src="img_readme/splash.png" alt="splash">
+<img src="image1.jpg">
 
 ### Deuxième écran
 
 Affiche le nombre de fois qu'il y a eu un crime lié à la cause sur laquelle on a cliqué.
 
-<img src="img_readme/liste_pokemon.png" alt="liste pokemon">   <img src="img_readme/recherche.png" alt="recherche">
+<img src="imgage2.jpg">
