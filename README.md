@@ -34,4 +34,4 @@ Affiche les différentes causes des crimes dans l'ordre décroissant de réccure
 
 Affiche le nombre de fois qu'il y a eu un crime lié à la cause sur laquelle on a cliqué.
 
-<img src="imgage2.jpg">
+<img src="image2.jpg">
