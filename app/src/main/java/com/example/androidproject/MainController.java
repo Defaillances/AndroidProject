@@ -33,7 +33,7 @@ public class MainController {
                 .create();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://age-of-empires-2-api.herokuapp.com/api/v1/technologies")
+                .baseUrl("https://age-of-empires-2-api.herokuapp.com/api/v1/technologies/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 
@@ -48,13 +48,14 @@ public class MainController {
     }
 
     private void makeApiCall() {
-        Call<RestTechnologiesResponse> call = restTechnologiesApi.getListTechnologies();
+        Call<RestTechnologiesResponse> call = restTechnologiesApi.getListTechnologiesn();
+
         call.enqueue(new Callback<RestTechnologiesResponse>() {
             @Override
             public void onResponse(Call<RestTechnologiesResponse> call,
-                                   Response<RestPokemonResponse> response) {
+                                   Response<RestTechnologiesResponse> response) {
                 RestTechnologiesResponse restTechnologiesResponse = response.body();
-                List<Technologies> listPokemon = restTechnologiesResponse.getResults();
+                List<Technologies> listTechnologies = restTechnologiesResponse.getResults();
                 storeData(listTechnologies);
                 activity.showList(listTechnologies);
             }
