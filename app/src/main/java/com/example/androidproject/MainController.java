@@ -17,6 +17,8 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+import static android.content.ContentValues.TAG;
+
 public class MainController {
 
     private com.example.androidproject.MainActivity activity;
@@ -33,18 +35,13 @@ public class MainController {
                 .create();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://age-of-empires-2-api.herokuapp.com/api/v1/technologies/")
+                .baseUrl("https://age-of-empires-2-api.herokuapp.com/api/v1/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 
         restTechnologiesApi = retrofit.create(RestTechnologiesApi.class);
+        makeApiCall();
 
-        if(hasDataInDataBase()){
-            List<Technologies> technologiesList = getListFromDataBase();
-            activity.showList(technologiesList);
-        }else{
-            makeApiCall();
-        }
     }
 
     private void makeApiCall() {
@@ -55,9 +52,11 @@ public class MainController {
             public void onResponse(Call<RestTechnologiesResponse> call,
                                    Response<RestTechnologiesResponse> response) {
                 RestTechnologiesResponse restTechnologiesResponse = response.body();
+
                 List<Technologies> listTechnologies = restTechnologiesResponse.getResults();
-                storeData(listTechnologies);
+
                 activity.showList(listTechnologies);
+
             }
 
             @Override

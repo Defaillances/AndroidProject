@@ -7,6 +7,7 @@ import java.util.List;
 
 import android.support.v7.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -18,7 +19,7 @@ import android.widget.TextView;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CelluleJava> implements Filterable {
     private List<Technologies> listValues;
-    private List<Technologies> listValues1;
+    private List<Technologies> listValues1 = new ArrayList<>();
 
     public class CelluleJava extends RecyclerView.ViewHolder {
         public TextView txtHeader;
@@ -94,15 +95,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CelluleJava> imple
         final String description = currentTechnologies.getDescription();
         final String expansion = currentTechnologies.getExpansion();
         final String age = currentTechnologies.getAge();
-
+        Log.d("YYOO", "onBindViewHolder: "+name);
         holder.txtHeader.setText(name);
-        holder.txtFooter.setText(description);
-        holder.txtFooter.setText(expansion);
-        holder.txtFooter.setText(age);
+        holder.txtFooter.setText(description);;
     }
 
     @Override
     public int getItemCount() {
+        if (listValues1 == null)
+            return 0;
         return listValues.size();
     }
 

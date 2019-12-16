@@ -1,22 +1,14 @@
-# Application Crimes
+# Application Age Of Empires 2
 
 ## Présentation
 
 Simple projet démontrant l'utilisation de la Clean Architecture et du pattern MVC dans une application android codé en Java.
 
-Cette application affiche les crimes les plus populaires de la NFL (football américain) du 31 Janvier 2000 au 31 Janvier 2016 et utilise l'API de Github permettant d'aller chercher un fichier sur le repo d'un utilisateur Github.
-
-## Prérequis
-
-- Installation d'Android Studio
-
-````
-https://github.com/Defaillances/AndroidProject.git
-````
+Cette application affiche les différentes technologies de Age Of Empires 2.
 
 ## Consignes respectées : 
 
-- Clean Architecture & MVVM
+- Clean Architecture & MVC
 - Appels REST
 - Ecrans : 2 activités
 - Affichage d'une liste dans un RecyclerView
@@ -26,12 +18,16 @@ https://github.com/Defaillances/AndroidProject.git
 
 ### Premier écran 
 
-Affiche les différentes causes des crimes dans l'ordre décroissant de réccurence. Avec une image devant chaque crime.
+Affiche la liste des technologies disponibles. On peut faire une recherche sur la technologie que l'on veut 
 
 <img src="image1.jpg">
 
 ### Deuxième écran
 
-Affiche le nombre de fois qu'il y a eu un crime lié à la cause sur laquelle on a cliqué.
+Afiche des informations sur les technologies demandées.
 
 <img src="image2.jpg">
+
+## Resultat :
+
+Ce projet m'a permis d'en apprendre plus sur les RecyclerView pour les trier ainsi que d'améliorer en général ma connaissance de Git et Android Studio.
