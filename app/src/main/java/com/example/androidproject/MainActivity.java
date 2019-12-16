@@ -1,26 +1,19 @@
 package com.example.androidproject;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
 import com.example.androidproject.model.Technologies;
-import com.example.androidproject.model.RestTechnologiesResponse;
 
 import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import java.util.List;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements View.OnClickListener {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -44,5 +37,15 @@ public class MainActivity extends Activity {
         recyclerView.setLayoutManager(layoutManager);
         mAdapter = new MyAdapter(input);
         recyclerView.setAdapter(mAdapter);
+    }
+
+    @Override
+    public void onClick(View v) {
+        Fragment f = new MonFragment();
+        FragmentManager manager = getFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.add(R.id.container, f,"TAG_FRAG");
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 }
